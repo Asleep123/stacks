@@ -37,3 +37,7 @@ services:
       - "3000:3000"
     networks:
       - grafana
+
+networks:
+  grafana:
+    driver: bridge
