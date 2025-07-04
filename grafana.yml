@@ -38,6 +38,10 @@ services:
     networks:
       - grafana
 
+volumes:
+  prom_data: {}
+  grafana_data: {}
+
 networks:
   grafana:
     driver: bridge
