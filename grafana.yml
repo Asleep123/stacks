@@ -3,7 +3,7 @@ services:
     image: prom/prometheus:v2.55.0
     container_name: prometheus
     volumes:
-      - ../files:/etc/prometheus:ro
+      - /etc/prometheus:/etc/prometheus:ro
       - prom_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -32,7 +32,6 @@ services:
     container_name: grafana
     volumes:
       - grafana_data:/var/lib/grafana
-      - /etc/prometheus:/etc/prometheus
     restart: unless-stopped
     ports:
       - "3000:3000"
