@@ -6,7 +6,6 @@ services:
       DOMAIN: ${DOMAIN}
       SIGNUPS_ALLOWED: ${SIGNUPS_ALLOWED}
       ADMIN_TOKEN: ${ADMIN_TOKEN}
-      DATABASE_URL: ${DATABASE_URL}
     volumes:
       - vaultwarden:/data
     ports:
