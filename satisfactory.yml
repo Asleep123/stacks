@@ -16,6 +16,7 @@ services:
       - PGID=1000
       - PUID=1000
       - STEAMBETA=false
+      - MULTIHOME=0.0.0.0
     restart: unless-stopped
     deploy:
       resources:
