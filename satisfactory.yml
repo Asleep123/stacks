@@ -27,7 +27,7 @@ services:
     container_name: 'sftp-server'
     image: 'atmoz/sftp:latest'
     volumes:
-      - 'satisfactory_data:/home/${SFTP_PASS}/satisfactory-server'
+      - 'satisfactory_data:/home/${SFTP_USER}/satisfactory-server'
     ports:
       - '2222:22'
     # set the user and password, and the user's UID (this should match the PUID and PGID of the satisfactory-server container)
