@@ -22,6 +22,16 @@ services:
           memory: 10G
         reservations:
           memory: 8G
+    # only needed for mods
+    sftp-server:
+      container_name: 'sftp-server'
+      image: 'atmoz/sftp:latest'
+      volumes:
+        - 'satisfactory_data:/home/${SFTP_PASS}/satisfactory-server'
+      ports:
+        - '2222:22'
+      # set the user and password, and the user's UID (this should match the PUID and PGID of the satisfactory-server container)
+      command: '${SFTP_USER}:${SFTP_PASS}:1000'
 
 volumes:
   satisfactory_data: {}
