@@ -8,11 +8,9 @@ services:
       KC_DB_USERNAME: ${PG_USER}
       KC_DB_PASSWORD: ${PG_PASS}
       
-      KC_HTTP_ENABLED: true
-      
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-    command: start --hostname auth.asleepdev.xyz --hostname-strict false --proxy-headers forwarded
+    command: start --hostname-strict false --proxy-headers forwarded
     depends_on:
       - keycloakdb
     networks:
