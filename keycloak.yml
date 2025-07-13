@@ -10,7 +10,7 @@ services:
       
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-    command: start --hostname-strict false --proxy-headers forwarded
+    command: start --hostname https://auth.asleepdev.xyz --proxy-headers forwarded
     depends_on:
       - keycloakdb
     networks:
