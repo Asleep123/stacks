@@ -8,8 +8,8 @@ services:
       KC_DB_USERNAME: ${PG_USER}
       KC_DB_PASSWORD: ${PG_PASS}
       
-      KC_HOSTNAME: auth.asleepdev.xyz
-      KC_PROXY: edge
+      KC_HOSTNAME_URL: https://auth.asleepdev.xyz
+      KC_HOSTNAME_ADMIN_URL: https://auth.asleepdev.xyz
       KC_HTTP_ENABLED: true
       
       KEYCLOAK_ADMIN: admin
