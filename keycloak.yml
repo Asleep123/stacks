@@ -19,17 +19,25 @@ services:
     command: start-dev
     depends_on:
       - keycloakdb
+    networks:
+      - keycloak
     ports:
       - 8080:8080
 
   keycloakdb:
     image: postgres:latest
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - keycloak_data:/var/lib/postgresql/data
     environment:
       POSTGRES_DB: ${PG_DB}
       POSTGRES_USER: ${PG_USER}
       POSTGRES_PASSWORD: ${PG_PASS}
+    networks:
+      - keycloak
 
 volumes:
   keycloak_data:
+
+networks:
+  keycloak:
+    driver: bridge
