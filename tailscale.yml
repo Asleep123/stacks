@@ -13,5 +13,3 @@ services:
       - sys_module
     restart: always
     network_mode: host
-    command: >
-      sh -c "tailscaled & sleep 2 && tailscale up --accept-routes --advertise-routes=192.168.1.0/24,10.0.1.0/24"
